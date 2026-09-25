@@ -351,13 +351,14 @@ The Dueling DQN achieved a higher average reward than the random baseline in thi
 
 # Generated Results
 
-The project generates the following visualization files:
+# Generated Results
+
+The project can generate the following files locally:
 
 ```text
 final_real_reward_comparison.png
 final_real_soc_comparison.png
 final_real_action_distribution.png
-```
 
 ### Reward Comparison
 
