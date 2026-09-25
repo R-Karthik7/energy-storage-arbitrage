@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+.venv/
+env/
+
+# macOS
+.DS_Store
+
+# Jupyter
+.ipynb_checkpoints/
+
+# VS Code
+.vscode/
+
+# Python cache
+.pytest_cache/
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+
+# Model checkpoints
+*.pth
+
+# Generated result files
+*.png
+*.txt
