@@ -273,21 +273,19 @@ The data is converted into hourly price sequences for the energy storage environ
 
 # Training
 
-The Dueling DQN was trained using the real training price data.
+The trained model is saved locally as:
 
-The training configuration includes multiple episodes with epsilon-greedy exploration.
-
-The trained model is saved as:
-
-```text
 dueling_dqn_model.pth
-```
 
-Training reward history is saved as:
+The model checkpoint is excluded from the GitHub repository through
+.gitignore. To reproduce the project from a fresh clone, run:
 
-```text
-dueling_dqn_training_rewards.txt
-```
+python3 train_dueling_real.py
+
+This creates the trained model locally. After training, the model can be
+evaluated using:
+
+python3 evaluate_dueling_real.py
 
 ---
 
@@ -382,45 +380,24 @@ energy-storage-arbitrage/
 │
 ├── battery.py
 ├── energy_env.py
-├── market.py
-├── prices.py
-│
-├── dqn.py
-├── dqn_agent.py
-├── dueling_dqn.py
-├── dueling_dqn_agent.py
-│
-├── train.py
-├── train_improved.py
-├── train_dueling_real.py
-│
-├── evaluate_dqn.py
-├── evaluate_improved_dqn.py
-├── evaluate_dueling_real.py
-│
-├── diagnose_dqn.py
-├── diagnose_dueling_real.py
-│
-├── compare_agents.py
-├── compare_real_agents.py
-├── final_real_comparison.py
-│
+├── real_data.py
 ├── real_train_prices.csv
 ├── real_test_prices.csv
 │
-├── dueling_dqn_model.pth
-├── dueling_dqn_training_rewards.txt
-├── dueling_dqn_real_results.txt
-├── real_agent_comparison.txt
-├── final_real_summary.txt
+├── dueling_dqn.py
+├── dueling_dqn_agent.py
+├── replay_buffer.py
 │
-├── final_real_reward_comparison.png
-├── final_real_soc_comparison.png
-├── final_real_action_distribution.png
+├── train_dueling_real.py
+├── evaluate_dueling_real.py
+├── diagnose_dueling_real.py
+├── compare_real_agents.py
+├── final_real_comparison.py
 │
 ├── requirements.txt
-└── README.md
-```
+├── README.md
+├── .gitignore
+└── LICENSE
 
 ---
 
@@ -429,7 +406,7 @@ energy-storage-arbitrage/
 Clone the repository:
 
 ```bash
-git clone <YOUR-GITHUB-REPOSITORY-URL>
+git clone https://github.com/R-Karthik7/energy-storage-arbitrage.git
 ```
 
 Move into the project directory:
