@@ -30,5 +30,5 @@ env/
 *.pth
 
 # Generated result files
-*.png
+
 *.txt
