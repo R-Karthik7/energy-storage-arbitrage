@@ -275,7 +275,91 @@ The comparison used 100 test episodes.
 These are the results of the final comparison run. The Dueling DQN achieved a higher average reward than the random baseline in this comparison, while the price-based benchmark achieved a higher average reward than the Dueling DQN.
 
 ---
+---
 
+# Multi-Algorithm Comparison
+
+To evaluate the reinforcement learning approaches under the same conditions, four agents were compared on the same 100 unseen 24-hour test episodes:
+
+- Random Agent
+- Price-Based Agent
+- Dueling DQN
+- Double DQN
+
+## Day-Ahead Price Scenario
+
+| Agent | Average Reward | Std. Dev. | Average Final SOC |
+|---|---:|---:|---:|
+| Random | €2.19 | €0.82 | 90.00% |
+| Price-Based | €3.32 | €0.67 | 46.04% |
+| Dueling DQN | €2.78 | €0.64 | 13.24% |
+| Double DQN | €2.83 | €0.60 | 38.48% |
+
+### Action Distribution
+
+| Agent | Charge | Discharge | Idle |
+|---|---:|---:|---:|
+| Random | 1000 | 600 | 800 |
+| Price-Based | 616 | 616 | 1168 |
+| Dueling DQN | 57 | 2151 | 192 |
+| Double DQN | 248 | 2061 | 91 |
+
+### Four-Agent Reward Comparison
+
+![Four-agent reward comparison](final_four_agent_reward_comparison.png)
+
+### Four-Agent SOC Comparison
+
+![Four-agent SOC comparison](final_four_agent_soc_comparison.png)
+
+### Four-Agent Action Distribution
+
+![Four-agent action distribution](final_four_agent_action_distribution.png)
+
+---
+
+# Second Price Scenario: Actual Electricity Prices
+
+The trained Dueling DQN and Double DQN policies were also evaluated using a second price scenario based on the dataset's actual electricity prices.
+
+The models were **not retrained** for this scenario. The purpose was to examine how the learned policies behave when evaluated using a different electricity-price series.
+
+The actual-price test data contains:
+
+- 7,013 test records
+- Minimum price: €9.33/MWh
+- Maximum price: €116.80/MWh
+- Average price: €57.88/MWh
+
+## Actual-Price Results
+
+| Agent | Average Reward | Std. Dev. | Average Final SOC |
+|---|---:|---:|---:|
+| Random | €2.45 | €0.68 | 44.92% |
+| Price-Based | €3.68 | €0.64 | 49.82% |
+| Dueling DQN | €3.01 | €0.52 | 11.69% |
+| Double DQN | €3.03 | €0.59 | 27.24% |
+
+### Actual-Price Action Distribution
+
+| Agent | Charge | Discharge | Idle |
+|---|---:|---:|---:|
+| Random | 817 | 809 | 774 |
+| Price-Based | 601 | 601 | 1198 |
+| Dueling DQN | 20 | 2248 | 132 |
+| Double DQN | 131 | 2211 | 58 |
+
+### Actual-Price Reward Comparison
+
+![Actual-price reward comparison](actual_price_reward_comparison.png)
+
+### Actual-Price SOC Comparison
+
+![Actual-price SOC comparison](actual_price_soc_comparison.png)
+
+### Actual-Price Action Distribution
+
+![Actual-price action distribution](actual_price_action_distribution.png)
 # Results
 
 ### Average Reward

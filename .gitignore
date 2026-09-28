@@ -32,3 +32,20 @@ env/
 # Generated result files
 
 *.txt
+# Generated images
+*.png
+
+# Final project result images
+!final_real_reward_comparison.png
+!final_real_soc_comparison.png
+!final_real_action_distribution.png
+
+!final_four_agent_reward_comparison.png
+!final_four_agent_soc_comparison.png
+!final_four_agent_action_distribution.png
+
+!actual_price_reward_comparison.png
+!actual_price_soc_comparison.png
+!actual_price_action_distribution.png
+# Raw source dataset
+energy_dataset.csv
