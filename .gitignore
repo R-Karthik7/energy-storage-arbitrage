@@ -29,6 +29,10 @@ env/
 # Model checkpoints
 *.pth
 
+# Required trained models for Streamlit demo
+!dueling_dqn_model.pth
+!double_dqn_model.pth
+
 # Generated result files
 
 *.txt
