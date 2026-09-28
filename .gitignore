@@ -53,3 +53,4 @@ env/
 !actual_price_action_distribution.png
 # Raw source dataset
 energy_dataset.csv
+!requirements.txt
